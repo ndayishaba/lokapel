@@ -774,7 +774,61 @@ body.nav-active { overflow: hidden; }
   #HERO
 \*-----------------------------------*/
 
-.hero .slider-btn { display: none; }
+
+
+.slider-bg {
+  position: relative;
+}
+
+.slider-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.631), rgba(0, 0, 0, 0.635)); /* Dark gradient */
+  z-index: 1; /* Place it above the image */
+}
+
+.slider-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Place image below the gradient */
+}
+
+.slider-item {
+  position: relative;
+  color: white;
+}
+
+.slider-item > * {
+  position: relative;
+  z-index: 2; /* Ensures text is on top of the gradient */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero .slider-btn {
+   display: none;
+  position: relative;
+
+   }
 
 .hero {
   position: relative;
@@ -1066,7 +1120,10 @@ body.nav-active { overflow: hidden; }
   flex-shrink: 0;
   border-radius: var(--radius-24);
 }
-
+.menu-card img {
+  width: 100px;
+  height: 100px;
+}
 .menu-card .card-title { transition: var(--transition-1); }
 
 .menu-card .card-title:is(:hover, :focus-visible) { color: var(--gold-crayola); }
